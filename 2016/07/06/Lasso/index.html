@@ -1,4 +1,103 @@
-<!DOCTYPE html><html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>The Art of Lasso | Qiang (Irving) Meng</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/4.1.1/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">The Art of Lasso</h1><a id="logo" href="/.">Qiang (Irving) Meng</a><p class="description">Think like your advisor's advisor.</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> Home</i></a><a href="/archives/"><i class="fa fa-archive"> Archive</i></a><a href="/about/"><i class="fa fa-user"> About</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">The Art of Lasso</h1><div class="post-meta">Jul 6, 2016<span> | </span><span class="category"><a href="/categories/Theory/">Theory</a></span><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> Hits</span></span></div><div class="post-content"><p>Even though I got to know lasso at about seven months ago and have implemented this algorithm in the machine learning courses, I cannot say I know lasso. I cannot explain why this algorithm can <strong>actually</strong> select the important variables instead of being sparse. Also, do you you know why lasso is called lasso? So this blog is used for organizing the knowledge of lasso. I will introduce the formulas of lasso(including general lasso, group lasso,  fused lasso, graphical lasso), some ways to solve lasso and the reason why it makes sense.<br>Oh, BY THE WAY, lasso is short for <em>least absolute shrinkage and selection operator</em>.</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>The Art of Lasso | Qiang (Irving) Meng</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Even though I got to know lasso at about seven months ago and have implemented this algorithm in the machine learning courses, I cannot say I know lasso. I cannot explain why this algorithm can actual">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Art of Lasso">
+<meta property="og:url" content="https://irvingmeng.github.io/2016/07/06/Lasso/index.html">
+<meta property="og:site_name" content="Qiang (Irving) Meng">
+<meta property="og:description" content="Even though I got to know lasso at about seven months ago and have implemented this algorithm in the machine learning courses, I cannot say I know lasso. I cannot explain why this algorithm can actual">
+<meta property="og:image" content="https://irvingmeng.github.io/images/lasso1.png">
+<meta property="og:image" content="https://irvingmeng.github.io/images/lasso2.png">
+<meta property="og:image" content="https://irvingmeng.github.io/images/lasso3.png">
+<meta property="og:updated_time" content="2016-07-07T01:09:48.669Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="The Art of Lasso">
+<meta name="twitter:description" content="Even though I got to know lasso at about seven months ago and have implemented this algorithm in the machine learning courses, I cannot say I know lasso. I cannot explain why this algorithm can actual">
+<meta name="twitter:image" content="https://irvingmeng.github.io/images/lasso1.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Qiang (Irving) Meng" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Qiang (Irving) Meng</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Think like your advisor&#39;s advisor.</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://irvingmeng.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Lasso" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/06/Lasso/" class="article-date">
+  <time datetime="2016-07-07T01:09:48.689Z" itemprop="datePublished">2016-07-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Theory/">Theory</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      The Art of Lasso
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Even though I got to know lasso at about seven months ago and have implemented this algorithm in the machine learning courses, I cannot say I know lasso. I cannot explain why this algorithm can <strong>actually</strong> select the important variables instead of being sparse. Also, do you you know why lasso is called lasso? So this blog is used for organizing the knowledge of lasso. I will introduce the formulas of lasso(including general lasso, group lasso,  fused lasso, graphical lasso), some ways to solve lasso and the reason why it makes sense.<br>Oh, BY THE WAY, lasso is short for <em>least absolute shrinkage and selection operator</em>.</p>
 <a id="more"></a>
 <p><strong>Background</strong>:<br>Lasso  is a variable selection method with the $l_1$ penalty. Its assumption is that only a few variables metter. It’s important in high-dimensional cases(n&lt;p). Also it can be used to do signal recovery. Compressive sensing is based on lasso(another interesting signal recovery method is called matrix factorization, based on the assumption that matrix is low-rank).  The formula of lasso is:<br>$$min ||y- X\beta ||_2^2 + \lambda ||\beta||_1$$</p>
 <p>Besides the traditional lasso, there are general lasso, group lasso,  fused lasso, graphical lasso etc. Here is a good package <a href="http://www.yelab.net/software/SLEP/" target="_blank" rel="external">SLEP</a>.</p>
@@ -20,7 +119,146 @@
 <p><em>methodology</em>  </p>
 <p>$$\frac{1}{2} ||y- X\beta||_2^2 + \lambda \underset{j=1}{\overset{d}{\Sigma}} p_j(|\beta_j|) = \frac{1}{2} ||y - \hat y||^2 + \frac{1}{2} \underset{j=1}{\overset{d}{\Sigma}}(z_j-\beta_j)^2 + \lambda \underset{j=1}{\overset{d}{\Sigma}} p_j(|\beta_j|)$$</p>
 <p>Here $Z = X^Ty, \hat y = XX^Ty, p_j(\cdot)$ is a general penalty function.<br> <strong>Here note that we normalize the X!!!!!, that means $X^TX=I$. That’s why if you want to use lasso, you need to normalize it ahead</strong></p>
-</div><script type="text/javascript" src="/js/share.js?v=0.0.0" async></script><a data-url="https://irvingmeng.github.io/2016/07/06/Lasso/" data-id="ciqbmj32x0004odurk32qdd2k" class="article-share-link">Share</a><div class="tags"><a href="/tags/lasso/">lasso</a></div><div class="post-nav"><a href="/2016/07/06/Model Selection/" class="pre">Model Selection</a><a href="/2016/07/06/DeepCausalModel/" class="next">Deep Causal Model</a></div></div></div></div><div class="pure-u-1-4"><div id="sidebar"><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> Categories</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Application/">Application</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Others/">Others</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Theory/">Theory</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Writing/">Writing</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> Tags</i></div><div class="tagcloud"><a href="/tags/DAG/" style="font-size: 15px;">DAG</a> <a href="/tags/Deep-learning-Causal-model/" style="font-size: 15px;">Deep learning, Causal model</a> <a href="/tags/lasso/" style="font-size: 15px;">lasso</a> <a href="/tags/SSI/" style="font-size: 15px;">SSI</a> <a href="/tags/Validation/" style="font-size: 15px;">Validation</a> <a href="/tags/Seminars/" style="font-size: 15px;">Seminars</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> Recent</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/07/06/Seminars/">Seminars in UW</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/06/Model Selection/">Model Selection</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/06/Lasso/">The Art of Lasso</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/06/DeepCausalModel/">Deep Causal Model</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/06/DAG/">Directed Acyclic Graph</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/06/SSISummary/">The Domain Knowledge of SSI(Clinical Guideline)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/06/papers/">If you want to publish a paper</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> Blogroll</i></div><ul></ul><a href="http://students.washington.edu/qiangm/" title="Personal Website" target="_blank">Personal Website</a><ul></ul><a href="https://github.com/IrvingMeng" title="Github" target="_blank">Github</a><ul></ul><a href="mailto:IrvingMeng@gmail.com" title="Gmail" target="_blank">Gmail</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">© <a href="/." rel="nofollow">Qiang (Irving) Meng.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.css?v=0.0.0"><script type="text/x-mathjax-config">MathJax.Hub.Config({
-  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
-  });
-</script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML" async></script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://irvingmeng.github.io/2016/07/06/Lasso/" data-id="ciqbmlwlp0004srurhl7uj5pg" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lasso/">lasso</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/07/06/Model Selection/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          Model Selection
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/07/06/DeepCausalModel/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">Deep Causal Model</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Catégories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Application/">Application</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Others/">Others</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Theory/">Theory</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Writing/">Writing</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DAG/">DAG</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Deep-learning-Causal-model/">Deep learning, Causal model</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSI/">SSI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Seminars/">Seminars</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Validation/">Validation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lasso/">lasso</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/DAG/" style="font-size: 10px;">DAG</a> <a href="/tags/Deep-learning-Causal-model/" style="font-size: 10px;">Deep learning, Causal model</a> <a href="/tags/SSI/" style="font-size: 10px;">SSI</a> <a href="/tags/Seminars/" style="font-size: 10px;">Seminars</a> <a href="/tags/Validation/" style="font-size: 10px;">Validation</a> <a href="/tags/lasso/" style="font-size: 10px;">lasso</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/07/06/Seminars/">Seminars in UW</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/06/Model Selection/">Model Selection</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/06/Lasso/">The Art of Lasso</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/06/DeepCausalModel/">Deep Causal Model</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/06/DAG/">Directed Acyclic Graph</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Qiang Meng<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
