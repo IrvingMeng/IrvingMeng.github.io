@@ -4,17 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Tag: Validation | Qiang (Irving) Meng</title>
+  <title>Directed Acyclic Graph | Qiang (Irving) Meng</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Qiang (Irving) Meng">
-<meta property="og:url" content="https://irvingmeng.github.io/tags/Validation/index.html">
+  <meta name="description" content="Directed Acyclic Graph(DAG) is especially useful to model causality. But it’s hard to find the global optimal solution since the time complexity is exponential and most algorithms are using greedy met">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Directed Acyclic Graph">
+<meta property="og:url" content="https://irvingmeng.github.io/2016/07/06/DAG/index.html">
 <meta property="og:site_name" content="Qiang (Irving) Meng">
-<meta property="og:description">
+<meta property="og:description" content="Directed Acyclic Graph(DAG) is especially useful to model causality. But it’s hard to find the global optimal solution since the time complexity is exponential and most algorithms are using greedy met">
+<meta property="og:updated_time" content="2016-07-07T01:07:54.537Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Qiang (Irving) Meng">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Directed Acyclic Graph">
+<meta name="twitter:description" content="Directed Acyclic Graph(DAG) is especially useful to model causality. But it’s hard to find the global optimal solution since the time complexity is exponential and most algorithms are using greedy met">
   
   
     <link rel="icon" href="/favicon.png">
@@ -160,57 +161,124 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-DAG" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/07/06/Model Selection/" class="archive-article-date">
-  	<time datetime="2016-07-07T01:10:03.613Z" itemprop="datePublished">Jul 6</time>
+    <div class="article-meta">
+      <a href="/2016/07/06/DAG/" class="article-date">
+  	<time datetime="2016-07-07T01:07:54.581Z" itemprop="datePublished">2016-07-06</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/07/06/Model Selection/">Model Selection</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Directed Acyclic Graph
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Validation/">Validation</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DAG/">DAG</a></li></ul>
 	</div>
 
-          
+        
 	<div class="article-category tagcloud">
 	<a class="article-category-link" href="/categories/Theory/">Theory</a>
 	</div>
 
 
-        </div>
         <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
+      </div>
+      
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Directed Acyclic Graph(DAG) is especially useful to model causality. But it’s hard to find the global optimal solution since the time complexity is exponential and most algorithms are using greedy method(this maybe not true, it’s just my idea now). This blog summarizes some papers to  help organize the idea.</p>
+<a id="more"></a>
+<p><strong>To Read</strong></p>
+<ol>
+<li>2006, Meinshausen and Buhlmann. High dimensional graphs and variable selection with lasso. <em>Why l1 can recovers the undirected network structure</em></li>
+<li>2006, Wainwright. Inferring graphical model  structure using l1-regularized pseudo-likelihood.<em>extend the formal prove to logistic regression</em> </li>
+</ol>
+<h2 id="Learning-Graphical-Model-Structure-using-L1-Regularization-Paths"><a href="#Learning-Graphical-Model-Structure-using-L1-Regularization-Paths" class="headerlink" title="Learning Graphical Model Structure using L1-Regularization Paths"></a>Learning Graphical Model Structure using L1-Regularization Paths</h2><p>Based on this paper, there is a matlab package: <a href="https://www.cs.ubc.ca/~murphyk/Software/DAGlearn/" target="_blank" rel="external">DAGlearn</a></p>
+<p><em>motivation</em></p>
+<ol>
+<li>Learning structure from data is an NP-hard problem </li>
+<li><strong>If you want you model to be suitable for density estimation and prediction, estimate the parameters(not solved in this paper)</strong></li>
+<li>Each node should have different penalty since some nodes have high degree(connectivity)</li>
+<li>Undirected model cannot show causality</li>
+</ol>
+<p><em>contribution</em></p>
+<ol>
+<li>propose a new heuristic technique to improve the performance of existing DAG-learn method(max-min hill-climbing MMHC, max-min parents-children MMPC, order search OS). Use lasso to search for potential parents first, L1MB(L1-regularized Markov Blanket).</li>
+<li>use different $\lambda$ for different nodes. </li>
+</ol>
+<p><em>methodology</em><br>Lasso + MDL. See figure 1</p>
+<p><em>Validation</em><br>Number of erroneously removed data, structural errors, MDL of the networks.</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/07/06/DeepCausalModel/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Deep Causal Model
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/07/06/SSISummary/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">The Domain Knowledge of SSI(Clinical Guideline)</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="DAG" data-title="Directed Acyclic Graph" data-url="https://irvingmeng.github.io/2016/07/06/DAG/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
 
 </div>
       <footer id="footer">
@@ -236,9 +304,9 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false
 	}
