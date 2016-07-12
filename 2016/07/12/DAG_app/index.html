@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Validation," />
+  <meta name="keywords" content="DAG," />
 
 
 
@@ -82,16 +82,19 @@
 
 
 
-<meta name="description" content="Model selection methods are used when you have a set of candidate models or your models have some undicided parameters. In this case, you need to use the model selection mothod. Most of the contents a">
+<meta name="description" content="This blog summarizes several applications of Directed Acyclic Graph (DAG) model.
+Risk assessment for hypertension and hypertension complications incidences using a Bayesian networkContributions: This">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Model Selection">
-<meta property="og:url" content="http://yoursite.com/2016/07/12/Model Selection/index.html">
+<meta property="og:title" content="Application of DAG">
+<meta property="og:url" content="http://yoursite.com/2016/07/12/DAG_app/index.html">
 <meta property="og:site_name" content="Qiang (Irving) Meng">
-<meta property="og:description" content="Model selection methods are used when you have a set of candidate models or your models have some undicided parameters. In this case, you need to use the model selection mothod. Most of the contents a">
-<meta property="og:updated_time" content="2016-07-07T01:10:03.581Z">
+<meta property="og:description" content="This blog summarizes several applications of Directed Acyclic Graph (DAG) model.
+Risk assessment for hypertension and hypertension complications incidences using a Bayesian networkContributions: This">
+<meta property="og:updated_time" content="2016-07-12T17:17:52.327Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Model Selection">
-<meta name="twitter:description" content="Model selection methods are used when you have a set of candidate models or your models have some undicided parameters. In this case, you need to use the model selection mothod. Most of the contents a">
+<meta name="twitter:title" content="Application of DAG">
+<meta name="twitter:description" content="This blog summarizes several applications of Directed Acyclic Graph (DAG) model.
+Risk assessment for hypertension and hypertension complications incidences using a Bayesian networkContributions: This">
 
 
 
@@ -112,7 +115,7 @@
 
 
 
-  <title> Model Selection | Qiang (Irving) Meng </title>
+  <title> Application of DAG | Qiang (Irving) Meng </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -252,7 +255,7 @@
             
             
               
-                Model Selection
+                Application of DAG
               
             
           </h1>
@@ -264,7 +267,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-07-12T10:42:26-07:00" content="2016-07-12">
+            <time itemprop="dateCreated" datetime="2016-07-12T11:11:20-07:00" content="2016-07-12">
               2016-07-12
             </time>
           </span>
@@ -278,8 +281,8 @@
               <span class="post-meta-item-text">In</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Theory/" itemprop="url" rel="index">
-                    <span itemprop="name">Theory</span>
+                  <a href="/categories/Application/" itemprop="url" rel="index">
+                    <span itemprop="name">Application</span>
                   </a>
                 </span>
 
@@ -311,31 +314,59 @@
       
 
       
-        <p>Model selection methods are used when you have a set of candidate models or your models have some undicided parameters. In this case, you need to use the model selection mothod. Most of the contents are from wiki. But more contents will be added after reading some to-do list.  </p>
-<p>Model selection is a task of selecting a statistical model from a set of candidate models given data. Usually, a good model balances the goodness of fit and the model complexity(means avoiding overfitting). I get contacted with AIC, BIC, MDL and Cross Validation at this time point. </p>
-<p>Recommended:</p>
+        <p>This blog summarizes several applications of Directed Acyclic Graph (DAG) model.</p>
+<h2 id="Risk-assessment-for-hypertension-and-hypertension-complications-incidences-using-a-Bayesian-network"><a href="#Risk-assessment-for-hypertension-and-hypertension-complications-incidences-using-a-Bayesian-network" class="headerlink" title="Risk assessment for hypertension and hypertension complications incidences using a Bayesian network"></a>Risk assessment for hypertension and hypertension complications incidences using a Bayesian network</h2><p><strong>Contributions: This paper uses BN network to model the hypertension and hypertension complications incidences. First Cox regression method as well as domain knowledge are used to select variables. Then the data are discretized and sub-sampled to build the network. In the end several validation methods are implemented including domain knowledge, the probability inference and the accuracy, sensitivity, AUC. The contributions are that it implements the BN to this problem…</strong></p>
+<p><em>Structure learning</em>:   </p>
 <ol>
-<li><a href="https://en.m.wikipedia.org/wiki/Model_selection" target="_blank" rel="external">Wiki page</a></li>
-</ol>
-<p>To read:</p>
-<ol>
-<li>1974, Akaike, A new look at the statistical model indentification          <em>why the coefficient of AIC is 2</em></li>
-<li>2002, Burnham &amp; Anderson</li>
-<li>2005, Yang, Can the strengths of AIC and BIC be shared  <em>how to prove asymptotically optimal</em></li>
+<li>Constraint-based algorithms: have lower time complexity and better scalability</li>
+<li>Score-based algorithms: more accurate and stable</li>
+<li>This paper use Max-min Hill-Climbing (MMHC) algorithm, which combines constrain-based and score-based algorithms. It first use a conditional independency test to find a set of adjacent nodes for each node (constraint-based) and then performs a standard hill-climbing search to orient the edges between nodes (score-based).</li>
 </ol>
 <a id="more"></a>
-<h2 id="Akaike-information-criterion-AIC"><a href="#Akaike-information-criterion-AIC" class="headerlink" title="Akaike information criterion(AIC)"></a>Akaike information criterion(AIC)</h2><p>$$AIC = -2ln(L) + 2k$$<br>L – Likeihood function<br>k – the number of estimated parameters<br><em>Does not provide null hypothesis, so can tell nothing about the quality of the model in a absolute sense</em></p>
-<p>AICc: AIC with a correction for finite sample sizes<br>$$AICc = AIC + \frac{2(k+1)k}{n-k-1}$$<br>Assumption: model is univariate, linear, has normally-distributed residuals</p>
-<h2 id="Bayesian-information-criterion-BIC"><a href="#Bayesian-information-criterion-BIC" class="headerlink" title="Bayesian information criterion(BIC)"></a>Bayesian information criterion(BIC)</h2><p>$$BIC = -2ln(\hat L) + kln(n)$$<br>$\hat L$ – the maximized value of likelihood function of model<br>n – sample size<br>k – number of free parameters  </p>
-<p><em>Limitation:</em> </p>
-<p><em>1.n has to be much larger thant k </em><br><em>2. Cannot handle high dimension(a little related to 1)</em></p>
-<h2 id="AIC-and-BIC"><a href="#AIC-and-BIC" class="headerlink" title="AIC and BIC"></a>AIC and BIC</h2><ol>
-<li>AIC has therotical advantages over BIC</li>
-<li>Under the assumption of the exact “true model” is not in candidate set, AIC is asymptotically optimal in selecting model with least mean squared error, BIC is not.</li>
-<li>BIC has larger penalty on model complexity than AIC</li>
+<p><em>Structure learning</em>: MMHC algorithm, Causal explorer toolkit(Aliferis et al. 2003)<br><em>Inference</em>: Bayes Net toolbox(Murphy 2002)  </p>
+<p>For writing:</p>
+<ol>
+<li>Key contributions. This needs to be done before your writing.</li>
+<li>Data construction and variable definition:<ul>
+<li>Give a table of the data name and detail</li>
+<li>Explain how to deal with pre-processing and missing value</li>
+</ul>
+</li>
+<li>Variable Selection:<ul>
+<li>Purely by data</li>
+<li>By domain knowledge(explain why, the reason is obvious. A network may have many layers. So one can not only consider the relationship with the last layer)</li>
+</ul>
+</li>
+<li>Discretization:<ul>
+<li>Explain why you need to do this(BN methods cannot be applied easily to mixed data)</li>
+<li><em>For better interpretation, this paper only use 2-3 levels!!!!!!!!!</em></li>
+<li>A table of subjects report each characteristic’s name, number of each level and percent of the level.</li>
+</ul>
+</li>
+<li>Unbalance: Can be eliminate this problem, using under-sampling. This need to see whether it’s needed.</li>
+<li><p>Validation:</p>
+<ul>
+<li>Accuracy, sensitivity and specificity</li>
+<li>AUC (area under ROC)</li>
+<li>In this paper, the authors’ result shows that BN cannot beat Cox regression. They explain the reason is that BN uses the discrete data. And BN tends to be more sensitive.<em>I agree with this interpretation.But whey don’t use the same dataset then compared with other methods?</em></li>
+</ul>
+</li>
+<li>Inference<ul>
+<li>The authors offer several tables to show that the network make sense. For example, use the three nodes and write the P(A|B,C) when B, C takes different values, P(A|B,C) shows significant differences.</li>
+</ul>
+</li>
 </ol>
-<h2 id="MInimum-description-length-Algorithmic-information-theory-MDL"><a href="#MInimum-description-length-Algorithmic-information-theory-MDL" class="headerlink" title="MInimum description length/Algorithmic information theory(MDL)"></a>MInimum description length/Algorithmic information theory(MDL)</h2><p>$$MDL = \hat{NLL} + \frac{\hat \theta}{2}log(n)$$<br>$\hat{NLL}$ – minimized negtive likelihood(with $\hat \theta$)</p>
-<h2 id="Cross-Validation"><a href="#Cross-Validation" class="headerlink" title="Cross Validation"></a>Cross Validation</h2><p>When your target is prediction. <strong>Here add the limitations from the student’s question in the stat seminar</strong></p>
+<h2 id="Combining-data-and-meta-analysis-to-build-Bayesian-networks-for-clinical-decision-support"><a href="#Combining-data-and-meta-analysis-to-build-Bayesian-networks-for-clinical-decision-support" class="headerlink" title="Combining data and meta-analysis to build Bayesian networks for clinical decision support"></a>Combining data and meta-analysis to build Bayesian networks for clinical decision support</h2><p>Ideas for writing:  </p>
+<ol>
+<li>In general, a multivariate model can be built in a number of ways: (1) purely from data using statistical and machine learning techniques, (2) from a combination of clinical knowledge and data or (3) from published literature using multivariate meta-analysis<br>techniques, (4) this paper proposes a method of combining the results of meta-analyses, clinical knowledge and data to pro-vide decision support for complex decision problems where the data is scarce.</li>
+<li>Challenges: Complex, important but rare(hard to collect very large datasets).</li>
+<li></li>
+</ol>
+<p>Useful sentences:  </p>
+<ol>
+<li>Complex clinical decisions require the decision maker to evaluate multiple factors that may interact with each other. Many clinical studies, however, report univariate relations between a single factor and outcome.</li>
+<li>The mechanistic relations between the observed factors and outcome may depend on clinical factors that are not available in the data or not examined in the meta-analysis. For example, the data may not distinguish between the measurements and true state of a variable, or may exclude a part of the important causal factors in the domain. In this case, latent variables are used to model clinical knowledge in the BN.</li>
+</ol>
 
       
     </div>
@@ -358,7 +389,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Validation/" rel="tag">#Validation</a>
+            <a href="/tags/DAG/" rel="tag">#DAG</a>
           
         </div>
       
@@ -367,17 +398,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/12/DAG/" rel="next" title="Directed Acyclic Graph">
-                <i class="fa fa-chevron-left"></i> Directed Acyclic Graph
+              <a href="/2016/07/12/RNN/" rel="next" title="Recurrent Neural Network">
+                <i class="fa fa-chevron-left"></i> Recurrent Neural Network
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/12/DeepCausalModel/" rel="prev" title="Deep Causal Model">
-                Deep Causal Model <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -491,7 +518,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Akaike-information-criterion-AIC"><span class="nav-number">1.</span> <span class="nav-text">Akaike information criterion(AIC)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bayesian-information-criterion-BIC"><span class="nav-number">2.</span> <span class="nav-text">Bayesian information criterion(BIC)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AIC-and-BIC"><span class="nav-number">3.</span> <span class="nav-text">AIC and BIC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MInimum-description-length-Algorithmic-information-theory-MDL"><span class="nav-number">4.</span> <span class="nav-text">MInimum description length/Algorithmic information theory(MDL)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cross-Validation"><span class="nav-number">5.</span> <span class="nav-text">Cross Validation</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Risk-assessment-for-hypertension-and-hypertension-complications-incidences-using-a-Bayesian-network"><span class="nav-number">1.</span> <span class="nav-text">Risk assessment for hypertension and hypertension complications incidences using a Bayesian network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Combining-data-and-meta-analysis-to-build-Bayesian-networks-for-clinical-decision-support"><span class="nav-number">2.</span> <span class="nav-text">Combining data and meta-analysis to build Bayesian networks for clinical decision support</span></a></li></ol></div>
             
           </div>
         </section>
