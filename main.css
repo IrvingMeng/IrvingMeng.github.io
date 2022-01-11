@@ -68,10 +68,11 @@ a:focus, a:hover {
     color: #FF9900;
     text-decoration:underline;
 }
-a:visited {
-    color: purple;
-    text-decoration: none;
-}
+/* a:visited { */
+/*     /\* color: purple; *\/ */
+/*     color: #6495ed; */
+/*     text-decoration: none; */
+/* } */
 
 body,td,th,tr,strong {
 	font-family: Lato, sans-serif;

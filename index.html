@@ -63,7 +63,7 @@
 		<heading> News </heading>
 		<ul>
 		  <li><strong>[2021.11] </strong>  &nbsp&nbsp Invited talk in the <a href="https://eab.org/events/program/261"> workshop on face image quality</a> organized by <a href="https://eab.org/">EAB</a>, <a href="https://www.dhs.gov/">DHS-OBIM</a>, <a href="https://www.nist.gov/">NIST</a>, <a href="https://www.eulisa.europa.eu/">eu-LISA</a>, etc.
-			<!-- 欧洲生物特征识别协会(European Association for Biometrics, EAB),  美国国土安全部生物特征身份管理办公室(DHS Office of Biometric Identity Management)， 美国国家标准与技术研究院(National Institute of Standards and Technology, NIST)， 欧盟eu-LISA机构 -->
+		    <!-- 欧洲生物特征识别协会(European Association for Biometrics, EAB),  美国国土安全部生物特征身份管理办公室(DHS Office of Biometric Identity Management)， 美国国家标准与技术研究院(National Institute of Standards and Technology, NIST)， 欧盟eu-LISA机构 -->
 		  <li><strong>[2021.07] </strong>  &nbsp&nbsp Our paper <em>"Learning Compatible Embeddings"</em> was accepted by ICCV 2021.</li>
 		  <li><strong>[2021.07] </strong>  &nbsp&nbsp Publish the paper <em>"PoseFace: Pose-Invariant Features and Pose-Adaptive Loss for Face Recognition" (a work done in 2020.3 but sadly not accepted).</em> </li>
 		  <li><strong>[2021.06] </strong>  &nbsp&nbsp Invited talk about MagFace in <a href="https://app6ca5octe2206.pc.xiaoe-tech.com/detail/p_60c9c516e4b0f120ffc7b72b/6">机器之心</a>. </li>
@@ -122,183 +122,181 @@
 		A general framework (LCE) which is applicable for both cross model compatibility and compatible training in direct/forward/backward manners. 
 	      </td>
 	    </tr>
+	  </table>
 
-	    <table bgcolor="#ffffd0" cellspacing="10">
-	      <tr onmouseout="magface_stop()" onmouseover="magface_start()" >
-		<td width="25%">
-		  <div class="one">
-		    <div class="two" id = 'magface_image'><img class="portrait_image" src='papers/magface/1.png'></div>
-		    <img class="portrait_image" src='papers/magface/0.png'>
-		  </div>
-		  <script type="text/javascript">
-		    function magface_start() {
-			document.getElementById('magface_image').style.opacity = "1";
-		    }
-		    function magface_stop() {
-			document.getElementById('magface_image').style.opacity = "0";
-		    }
-		    magface_stop()
-		  </script>
-		  <!-- <img class="portrait_image" src='papers/magface/intro1.png'> -->
-		</td>
-		<td valign="top" width="75%">
-		  <a href="https://arxiv.org/abs/2103.06627">
-		    <papertitle>MagFace: A Universal Representation for Face Recognition and Quality Assessment</papertitle>
-		  </a>
-		  <br>
-		  <strong></strong><strong>Qiang Meng</strong>, 
-		  Shichao Zhao, Zhida Huang, Feng Zhou
-		  <!-- <a href="https://www.linkedin.com/in/ganeshjcs">test</a> -->
-		  <br>
-		  <em>CVPR</em>, 2021  <strong><font color="#FF0000">(Oral presentation)</font> </strong>
-		  <br>
-		  <a href="https://github.com/IrvingMeng/MagFace">code</a>
-		  |
-		  <a href="https://www.bilibili.com/video/BV1Jq4y1j7ZH">short video</a>
-		  <br>
-		  A novel loss which equips feature magnitudes with the ability to represent face qualities, as well as achieves better performances on face recognition and clustering.
-		  More importantly, <em>no additional labels are required!</em>
-		  <!-- https://zhuanlan.zhihu.com/p/393598428 -->
-		</td>
-	      </tr>
+	  <table bgcolor="#ffffd0" cellspacing="10">
+	    <tr onmouseout="magface_stop()" onmouseover="magface_start()" >
+	      <td width="25%">
+		<div class="one">
+		  <div class="two" id = 'magface_image'><img class="portrait_image" src='papers/magface/1.png'></div>
+		  <img class="portrait_image" src='papers/magface/0.png'>
+		</div>
+		<script type="text/javascript">
+		  function magface_start() {
+		      document.getElementById('magface_image').style.opacity = "1";
+		  }
+		  function magface_stop() {
+		      document.getElementById('magface_image').style.opacity = "0";
+		  }
+		  magface_stop()
+		</script>
+		<!-- <img class="portrait_image" src='papers/magface/intro1.png'> -->
+	      </td>
+	      <td valign="top" width="75%">
+		<a href="https://arxiv.org/abs/2103.06627">
+		  <papertitle>MagFace: A Universal Representation for Face Recognition and Quality Assessment</papertitle>
+		</a>
+		<br>
+		<strong></strong><strong>Qiang Meng</strong>, 
+		Shichao Zhao, Zhida Huang, Feng Zhou
+		<!-- <a href="https://www.linkedin.com/in/ganeshjcs">test</a> -->
+		<br>
+		<em>CVPR</em>, 2021  <strong><font color="#FF0000">(Oral presentation)</font> </strong>
+		<br>
+		<a href="https://github.com/IrvingMeng/MagFace">code</a>
+		|
+		<a href="https://www.bilibili.com/video/BV1Jq4y1j7ZH">short video</a>
+		<br>
+		A novel loss which equips feature magnitudes with the ability to represent face qualities, as well as achieves better performances on face recognition and clustering.
+		More importantly, <em>no additional labels are required!</em>
+		<!-- https://zhuanlan.zhihu.com/p/393598428 -->
+	      </td>
+	    </tr>
+	  </table>
 
-	      <table cellspacing="10">
-		<td width="25%">
-		  <!-- <div class="one">
-		       <div class="two" id = 'poseface_image'><img class="portrait_image" src='papers/poseface/0.png'></div>
-		       <img class="portrait_image" src='papers/poseface/1.png'>
-		  </div>
-		  <script type="text/javascript">
-		    function poseface_start() {
-		    document.getElementById('poseface_image').style.opacity = "1";
-		    }
-		    function poseface_stop() {
-		    document.getElementById('poseface_image').style.opacity = "0";
-		    }
-		    poseface_stop()
-		  </script> -->
-		  <img class="portrait_image" src='papers/poseface/1.png'>
-		</td>
-		<td valign="top" width="75%">
-		  <a href="https://arxiv.org/abs/2107.11721">
-		    <papertitle>PoseFace: Pose-Invariant Features and Pose-Adaptive Loss for Face Recognition</papertitle>
-		  </a>
-		  <br>
-		  <strong>Qiang Meng</strong>, Xiaqing Xu, Xiaobo Wang, Yang Qian, Yunxiao Qin, Zezheng Wang, Chenxu Zhao, Feng Zhou, Zhen Lei
-		  <br>
-		  <em>arXiv</em>, 2021 
-		  <br>
-		  An efficient large-pose face recognition method which utilizes the facial landmarks to disentangle the pose-invariant features and exploits a pose-adaptive loss to handle the imbalance issue adaptively. 
-		</td>
+	  <table cellspacing="10">
+	    <td width="25%">
+	      <!-- <div class="one">
+		   <div class="two" id = 'poseface_image'><img class="portrait_image" src='papers/poseface/0.png'></div>
+		   <img class="portrait_image" src='papers/poseface/1.png'>
+	      </div>
+	      <script type="text/javascript">
+		function poseface_start() {
+		document.getElementById('poseface_image').style.opacity = "1";
+		}
+		function poseface_stop() {
+		document.getElementById('poseface_image').style.opacity = "0";
+		}
+		poseface_stop()
+	      </script> -->
+	      <img class="portrait_image" src='papers/poseface/1.png'>
+	    </td>
+	    <td valign="top" width="75%">
+	      <a href="https://arxiv.org/abs/2107.11721">
+		<papertitle>PoseFace: Pose-Invariant Features and Pose-Adaptive Loss for Face Recognition</papertitle>
+	      </a>
+	      <br>
+	      <strong>Qiang Meng</strong>, Xiaqing Xu, Xiaobo Wang, Yang Qian, Yunxiao Qin, Zezheng Wang, Chenxu Zhao, Feng Zhou, Zhen Lei
+	      <br>
+	      <em>arXiv</em>, 2021 
+	      <br>
+	      An efficient large-pose face recognition method which utilizes the facial landmarks to disentangle the pose-invariant features and exploits a pose-adaptive loss to handle the imbalance issue adaptively. 
+	    </td>
+	  </table>
+
+
+	  <table cellspacing="10">
+	    <td width="25%">
+	      <img class="portrait_image" src='papers/face_align/0.png'>
+	    </td>
+	    <td valign="top" width="75%">
+	      <a href="https://arxiv.org/abs/2102.05447">
+		<papertitle>Searching for Alignment in Face Recognition</papertitle>
+	      </a>
+	      <br>
+	      Xiaqing Xu, <strong></strong><strong>Qiang Meng</strong>,
+	      Yunxiao Qin, Jianzhu Guo, Chenxu Zhao, Feng Zhou, Zhen Lei
+	      <!-- <a href="https://www.linkedin.com/in/ganeshjcs">test</a> -->
+	      <br>
+	      <em>AAAI</em>, 2021 
+	      <br>
+	      We design a face template searching space with decomposed crop size and vertical shift, and propose the Face Alignment Policy Search (FAPS) to find optimal alignment templates for face recognition. 
+	    </td>
+	  </table>
+	
+
+	<table cellspacing="10">
+	  <td width="25%">
+	    <img class="portrait_image" src='papers/chi/1.png'>
+	  </td>
+	  <td valign="top" width="75%">
+	    <a href="https://www.sciencedirect.com/science/article/pii/S1532046417301594">
+	      <papertitle>CHI: A Contemporaneous Health Index for Degenerative Disease Monitoring using Longitudinal Measurements</papertitle>
+	    </a>
+	    <br>
+	    Yijun Huang, <strong></strong><strong>Qiang Meng</strong>, Heather Evans, William Lober, Yu Cheng, Xiaoning Qian, Ji Liu, Shuai Huang
+	    <br>
+	    <em> Journal of biomedical informatics</em>, 2017
+	    <br>
+	    A optimization formulation is developed for contemporaneous patient risk monitoring by exploiting the emerging data-rich environment in healthcare applications.
+	  </td>
+	</table>
+
+
+    </table>
+
+    <br>
+
+    <table style="width: 100%; max-width: 800px; border:0px; border-spacing: 0px; border-collapse: separate; margin-right: auto; margin-left: auto;">
+      <tr>
+	<td>
+	  <heading>Honors </heading>
+	  <ul>
+            <li> <strong>[2015]</strong>  College of Engineering Dean's Fellowship, <em>University of Washington</em></li>
+            <li><strong>[2014]</strong>  Samsung Scholarship, <em>University of Science and Technology of China</em></li>
+            <li><strong>[2013]</strong>  National Encouragement Scholarship, <em>University of Science and Technology of China</em></li>
+            <li><strong>[2013]</strong>  First prize in the Challenge Cup, <em>University of Science and Technology of China</em></li>
+            <li><strong>[2012]</strong>  National Encouragement Scholarship, <em>University of Science and Technology of China</em></li>   
+            <li><strong>[2012]</strong>  1st place in RoboGame Robot Competition, <em>University of Science and Technology of China</em></li>  	
+	  </ul>
+	</td>
       </tr>
+    </table>
 
-
-      <table cellspacing="10">
-	<td width="25%">
-	  <img class="portrait_image" src='papers/face_align/0.png'>
+    <br>
+    <table style="width: 100%; max-width: 800px; border:0px; border-spacing: 0px; border-collapse: separate; margin-right: auto; margin-left: auto;">
+      <tr>
+	<td>
+	  <heading>Teaching </heading>
+	  <ul>
+            <li>IND E 315 - <strong>Probability and Statistics for Engineers</strong> [Spring 17] [Summer 17] [Winter 18] [Spring 18]</li> 
+            <li>IND E 250 - <strong>Linear and Network Programming</strong> [Fall 16] [Fall 17] </li>
+            <li>IND E 410 - <strong>Fundamentals of Engineering Economy</strong> [Winter 16]</li>
+	  </ul>
 	</td>
-	<td valign="top" width="75%">
-	  <a href="https://arxiv.org/abs/2102.05447">
-	    <papertitle>Searching for Alignment in Face Recognition</papertitle>
-	  </a>
-	  <br>
-	  Xiaqing Xu, <strong></strong><strong>Qiang Meng</strong>,
-	  Yunxiao Qin, Jianzhu Guo, Chenxu Zhao, Feng Zhou, Zhen Lei
-	  <!-- <a href="https://www.linkedin.com/in/ganeshjcs">test</a> -->
-	  <br>
-	  <em>AAAI</em>, 2021 
-	  <br>
-	  We design a face template searching space with decomposed crop size and vertical shift, and propose the Face Alignment Policy Search (FAPS) to find optimal alignment templates for face recognition. 
-	</td>
-</tr>
-
-
-<table cellspacing="10">
-  <td width="25%">
-    <img class="portrait_image" src='papers/chi/1.png'>
-  </td>
-  <td valign="top" width="75%">
-    <a href="https://www.sciencedirect.com/science/article/pii/S1532046417301594">
-      <papertitle>CHI: A Contemporaneous Health Index for Degenerative Disease Monitoring using Longitudinal Measurements</papertitle>
-    </a>
+      </tr>
+    </table>
     <br>
-    Yijun Huang, <strong></strong><strong>Qiang Meng</strong>, Heather Evans, William Lober, Yu Cheng, Xiaoning Qian, Ji Liu, Shuai Huang
-    <br>
-    <em> Journal of biomedical informatics</em>, 2017
-    <br>
-    A optimization formulation is developed for contemporaneous patient risk monitoring by exploiting the emerging data-rich environment in healthcare applications.
-  </td>
-</tr>
 
 
 
-
-</table>
-<br>
-
-<table>
-  <tr>
-    <td>
-      <heading>Honors </heading>
-      <ul>
-        <li> <strong>[2015]</strong>  College of Engineering Dean's Fellowship, <em>University of Washington</em></li>
-        <li><strong>[2014]</strong>  Samsung Scholarship, <em>University of Science and Technology of China</em></li>
-        <li><strong>[2013]</strong>  National Encouragement Scholarship, <em>University of Science and Technology of China</em></li>
-        <li><strong>[2013]</strong>  First prize in the Challenge Cup, <em>University of Science and Technology of China</em></li>
-        <li><strong>[2012]</strong>  National Encouragement Scholarship, <em>University of Science and Technology of China</em></li>   
-        <li><strong>[2012]</strong>  1st place in RoboGame Robot Competition, <em>University of Science and Technology of China</em></li>  	
-      </ul>
-    </td>
-  </tr>
-</table>
-
-<br>
-<table>
-  <tr>
-    <td>
-      <heading>Teaching </heading>
-      <ul>
-        <li>IND E 315 - <strong>Probability and Statistics for Engineers</strong> [Spring 17] [Summer 17] [Winter 18] [Spring 18]</li> 
-        <li>IND E 250 - <strong>Linear and Network Programming</strong> [Fall 16] [Fall 17] </li>
-        <li>IND E 410 - <strong>Fundamentals of Engineering Economy</strong> [Winter 16]</li>
-      </ul>
-    </td>
-  </tr>
-</table>
-<br>
+    <center>
+      <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?cl=080808&w=300&t=tt&d=TQza_Ty60YCW_BJcSVuk9C0IflO_Jo6Jz2qoD6Bgju4&co=f9f9f9&cmo=3acc3a&cmn=ff5353&ct=808080"></script>
+      <!-- <a href="https://clustrmaps.com/site/1blzm" title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=TQza_Ty60YCW_BJcSVuk9C0IflO_Jo6Jz2qoD6Bgju4&cl=ffffff"></a> -->
+    </center>
 
 
+    <table style="width: 100%; max-width: 800px; border:0px; border-spacing: 0px; border-collapse: separate; margin-right: auto; margin-left: auto;">
+      <!-- <tr> -->
+	<!--   <td> -->
+	  <!--     <br> -->
+	  <!--     <hr> -->
+	  <!-- </tr> -->
+      <hr>
 
-<center>
-	<script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?cl=080808&w=300&t=tt&d=TQza_Ty60YCW_BJcSVuk9C0IflO_Jo6Jz2qoD6Bgju4&co=f9f9f9&cmo=3acc3a&cmn=ff5353&ct=808080"></script>
-	<!-- <a href="https://clustrmaps.com/site/1blzm" title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=TQza_Ty60YCW_BJcSVuk9C0IflO_Jo6Jz2qoD6Bgju4&cl=ffffff"></a> -->
-</center>
+      <center>
+	<foot>
+	  <td width="75%">
+	    Website adapted from <u><a href="https://jonbarron.info/">Jon Barron </a></u> & <u><a href="https://github.com/abhoi/abhoi.github.io">Amlaan Bhoi</a></u>
+	  </td>
+	  <td width="30%">
+	    Last updated in Dec 23, 2021
+	  </td>
+	</foot>
+      </center>
+    </table>
 
 
-<table style="width: 100%; max-width: 800px; border:0px; border-spacing: 0px; border-collapse: separate; margin-right: auto; margin-left: auto;">
-  <!-- <tr> -->
-    <!--   <td> -->
-      <!--     <br> -->
-      <!--     <hr> -->
-      <!-- </tr> -->
-  <hr>
-
-  <center>
-    <foot>
-      <td width="75%">
-	Website adapted from <u><a href="https://jonbarron.info/">Jon Barron </a></u> & <u><a href="https://github.com/abhoi/abhoi.github.io">Amlaan Bhoi</a></u>
-      </td>
-      <td width="30%">
-	Last updated in Dec 23, 2021
-      </td>
-    </foot>
-  </center>
-</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</body>
+  </body>
 </html>
 
