@@ -56,8 +56,8 @@
 		  <img src="magface.png" style="max-width: 50%;  margin-left: auto; margin-right: auto; display: block;">
 		  <h6 align="justify"><b>Overview of the proposed method.</b>
 		    MagFace learns for (a) in-the-wild faces (b) a universal embedding by pulling the easier samples closer to the class center and pushing them away from the origin <i>o</i>.
-    The magnitude <i>l</i> before normalization increases along with feature's cosine distance to its class center, and therefore reveals the quality for each face.
-    The larger the <i>l</i>, the more likely the sample can be recognized.
+		    The magnitude <i>l</i> before normalization increases along with feature's cosine distance to its class center, and therefore reveals the quality for each face.
+		    The larger the <i>l</i>, the more likely the sample can be recognized.
 		  </h6>
 		</div>
 
@@ -76,28 +76,24 @@
 		<div class="row">
 		  <h4>Abstract</h4>
 		  <h6 align="justify">
-		      The performance of face recognition system degrades when the variability of the acquired faces increases.
-		      Prior work alleviates this issue by either monitoring the face quality in pre-processing or predicting the data uncertainty along with the face feature.
-		      This paper proposes MagFace, a category of losses that learn a universal feature embedding whose magnitude can measure the quality of the given face.
-		      Under the new loss, it can be proven that the magnitude of the feature embedding monotonically increases if the subject is more likely to be recognized.
-		      In addition, MagFace introduces an adaptive mechanism to learn a well-structured within-class feature distributions by pulling easy samples to class centers while pushing hard samples away.
-		      This prevents models from overfitting on noisy low-quality samples and improves face recognition in the wild.
-		      Extensive experiments conducted on face recognition, quality assessments as well as clustering demonstrate its superiority over state-of-the-arts.
+		    The performance of face recognition system degrades when the variability of the acquired faces increases.
+		    Prior work alleviates this issue by either monitoring the face quality in pre-processing or predicting the data uncertainty along with the face feature.
+		    This paper proposes MagFace, a category of losses that learn a universal feature embedding whose magnitude can measure the quality of the given face.
+		    Under the new loss, it can be proven that the magnitude of the feature embedding monotonically increases if the subject is more likely to be recognized.
+		    In addition, MagFace introduces an adaptive mechanism to learn a well-structured within-class feature distributions by pulling easy samples to class centers while pushing hard samples away.
+		    This prevents models from overfitting on noisy low-quality samples and improves face recognition in the wild.
+		    Extensive experiments conducted on face recognition, quality assessments as well as clustering demonstrate its superiority over state-of-the-arts.
 		  </h6>
 		</div>
+
+		
 
 		<div class="row">
 		  <h4>Code</h4>
 		  <h6 align="justify">
 		    Avaiable at <a href="https://github.com/IrvingMeng/MagFace">here</a>.
 		  </h6>
-		</div>		
-
-		<div class="row">
-		  <h4>Video</h4>
-		  <iframe style="margin-left: auto; margin-right: auto; display: block;" width="560" height="315" src="https://www.youtube.com/watch?v=BcwC3VBZWJU&t=15s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		</div>
-
 
 		<div class="row">
 		  <h4>Paper</h4>
@@ -118,13 +114,18 @@
 			    <a href="https://openaccess.thecvf.com/content/CVPR2021/supplemental/Meng_MagFace_A_Universal_CVPR_2021_supplemental.pdf">[supp]</a>
 			    <a href="https://arxiv.org/abs/2103.06627">[arXiv]</a>
 			    <a href="https://drive.google.com/file/d/1S0hoQNDJC_H8b8ryuYyF7xjVLMorlBu1/view?usp=sharing">[Poster]</a>
-			    <a href="https://www.youtube.com/watch?v=BcwC3VBZWJU&t=15s">[Video on YouTube]</a>
 			    <a href="https://www.bilibili.com/video/BV1Jq4y1j7ZH">[Video on BiliBili]</a>			    
 			  </h6>
 			</th>
 		      </tr>
 		    </table>
-		  </div>
+		  </div>		
+
+		<div class="row">
+		  <h4>Video</h4>
+		  <iframe style="margin-left: auto; margin-right: auto; display: block;" width="560" height="315" src="https://www.youtube.com/embed/BcwC3VBZWJU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+
 
 		  <h5>BibTeX</h5>
 		  <pre>
