@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <title>PrivacyFace</title>
+    
+
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"
+	  integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+	  crossorigin="anonymous">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+	 <!-- Custom styles for this template -->
+	 <link rel="stylesheet" type="text/css" href="../static/css/main.css" />
+	 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+	 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+	 <link rel="stylesheet" type="text/css" href="../static/css/syntax.css" />
+	 <link rel="icon" type="image/ico" href="../../head.ico">
+	 
+  </head>
+  <!-- Main Body-->
+  <body>
+    <!-- Wrap all page content here -->
+    <div id="wrap">
+      <!-- Navbar header -->
+
+
+      <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+      <div class="container">
+	<div class="blog-post">
+	  <h3>
+	    <!-- <strong><a href="">Improving Federated Learning Face Recognition <br> via Privacy-Agnostic Clusters</a></strong> -->
+	    Improving Federated Learning Face Recognition <br> via Privacy-Agnostic Clusters
+	  </h3>
+          <h4>
+	    <!-- color_table: http://www.divcss5.com/html/h636.shtml -->
+            <p style="color:#EA0000"> <b> ICLR 2022</b>
+	    </p>
+          </h4>
+	  
+	  <h4>
+	    <a href="https://irvingmeng.github.io/">Qiang Meng</a><sup>1</sup> &nbsp;
+	    <a href="http://f-zhou.com/">Feng Zhou</a><sup>1</sup> &nbsp;
+	    Hainan Ren<sup>1</sup> &nbsp;
+	    <a href="https://scholar.google.com/citations?user=Kg8wOK8AAAAJ">Tianshu Feng</a><sup>2</sup> &nbsp;
+
+	    Guochao Liu<sup>1</sup> &nbsp;
+	    <a href="https://scholar.google.com/citations?user=FZY0k_kAAAAJ">Yuanqing Lin</a><sup>1</sup> 
+	  </h4>
+	  <h4>
+	    <i>
+	      <sup>1</sup>Algorithm Research, Aibee Inc. &nbsp;&nbsp;&nbsp;&nbsp; <sup>2</sup>Wells Fargo
+	    </i>
+	  </h4>
+	  <h5 align="justify"><sup>2</sup>Disclaimer: The views expressed in this paper are the personal views of Tianshu Feng and do not necessarily reflect the views of Wells Fargo Bank, N.A., its parent company, affiliates, and subsidiaries.</h5>
+	  
+
+	</div>
+	<div class="panel panel-default">
+	  <div class="panel-body">
+	    <div class="blogpost">
+	      <div class="panel-body">
+
+		<div class="row">
+		  <img src="intro.png" style="max-width: 85%;  margin-left: auto; margin-right: auto; display: block;">
+		  <h6 align="justify"><b>Overview of the proposed method.</b>
+		    Under the federated setting, multiple clients communicate non-sensitive model parameters &#934;<sup>c</sup> (excluding the last fully connected layer W<sup>c</sup> which are greatly tied to privacy) under the orchestration by a central server.
+		    (a) Since W<sup>c</sup>'s are kept locally in conventional FL updating, the embedding space could overlap for different classes during training.
+		    (b) In contrast, the proposed PrivacyFace framework learns an improved face embedding by aggregating discriminative embedding clusters that are proved to achieve differential privacy.
+		  </h6>
+		</div>
+
+
+		<div class="row">
+		  <h4>Abstract</h4>
+		  <h6 align="justify">
+		    The growing public concerns on data privacy in face recognition can be greatly addressed by the federated learning (FL) paradigm.
+		    However, conventional FL methods perform poorly due to the uniqueness of the task: broadcasting class centers among clients is crucial for recognition performances but leads to privacy leakage.
+		    To resolve the privacy-utility paradox, this work proposes PrivacyFace, a framework largely improves the federated learning face recognition via communicating auxiliary and privacy-agnostic information among clients.
+		    PrivacyFace mainly consists of two components:
+		    First, a practical Differentially Private Local Clustering (DPLC) mechanism is proposed to distill sanitized clusters from local class centers.
+		    Second, a consensus-aware recognition loss subsequently encourages global consensuses among clients, which ergo results in more discriminative features.
+		    The proposed framework is mathematically proved to be differentially private, introducing a lightweight overhead as well as yielding prominent performance boosts (<i>e.g.</i>, +9.63% and +10.26% for TAR@FAR=1e-4 on IJB-B and IJB-C respectively).
+		    Extensive experiments and ablation studies on a large-scale dataset have demonstrated the efficacy and practicability of our method.
+		  </h6>
+		</div>
+
+
+		<div class="row">
+		  <h4>Paper</h4>
+
+		  <div>
+		    <table>
+		      <tr>
+			<th style="width: 25%;">
+			  <a href="https://openreview.net/forum?id=7l1IjZVddDW">
+			    <img class="layered-paper" src="pf_thumbnail.png" style="max-width: 70%;" align="center">
+			  </a>
+			</th>
+			<th>
+			  <h6 align="justify"><b>Improving Federated Learning Face Recognition via Privacy-Agnostic Clusters</b></h6>
+			  <h6 align="justify">Qiang Meng<sup>1</sup>, Feng Zhou<sup>1</sup>, Hainan Ren<sup>1</sup>, Tianshu Feng<sup>2</sup>, Guochao Liu<sup>1</sup>, Yuanqing Lin<sup>1</sup></h6>
+			  <h6 align="justify"><i><sup>1</sup>Algorithm Research, Aibee Inc. &nbsp;&nbsp; <sup>2</sup>Wells Fargo</i></h6>
+			  <!-- <h6 align="justify">Mihai Dusmanu <sup>1</sup>, Johannes L. Schönberger <sup>2</sup>, Sudipta N. Sinha <sup>2</sup>, Marc Pollefeys <sup>1, 2</sup></h6> -->
+			  <!-- <h6 align="justify"><i><sup>1</sup>ETH Zürich, <sup>2</sup>Microsoft</i></h6> -->
+			  <h6 align="justify"><i>2022 International Conference on Learning Representations</i></h6>
+			  <h6>
+			    <a href="https://openreview.net/forum?id=7l1IjZVddDW">[pdf]</a>
+			    [arXiv] [Video]
+			    <!-- <a href="https://arxiv.org/abs/2108.01958">[arXiv]</a> -->
+			    <!-- <a href="https://www.bilibili.com/video/BV1au411f7n5">[Video on BiliBili]</a>			     -->
+			  </h6>
+			</th>
+		      </tr>
+		    </table>
+		  </div>
+		</div>
+		<br>
+
+		<div class="row">
+		  <h4>Video</h4>
+		  <h6 align="justify">Coming soon... </h6>
+		  <!--   <iframe style="margin-left: auto; margin-right: auto; display: block;" width="560" height="315" src="https://www.youtube.com/embed/Il39tMtCbcc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+		</div>
+
+		<br>
+
+		<div class="row">
+		  <h5>BibTeX</h5>
+		  <pre width=100><tt>@inproceedings{meng2021impro,
+    title={Improving Federated Learning Face Recognition via Privacy-Agnostic Clusters},
+    author={Meng, Qiang and Zhou, Feng and Ren, Hainan and
+            Feng, Tianshu and Liu, Guochao and Lin, Yuanqing},
+    booktitle=ICLR,
+    year=2022
+}		  </tt></pre>
+		</div>
+	      </div>		
+
+	    </div>
+
+	  </div>
+	</div>
+      </div>
+    </div>
+
+
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"
+	integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ=="
+	crossorigin="anonymous"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../static/js/docs.min.js"></script>
+<script src="../static/js/main.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../static/js/ie10-viewport-bug-workaround.js"></script>
+</body>
+</html>

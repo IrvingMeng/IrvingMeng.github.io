@@ -136,3 +136,10 @@ foot {
    -moz-transition: opacity .2s ease-in-out;
    -webkit-transition: opacity .2s ease-in-out;
 }
+
+li.indent{margin-left:5.4em;text-indent:-5.4em}
+
+
+
+/* li.indent{margin:0.6% 0;margin-left:5.4em;text-indent:-5.4em} */
+/* li.margin{margin:2% 0} */

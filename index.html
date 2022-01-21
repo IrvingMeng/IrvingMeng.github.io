@@ -57,20 +57,23 @@
 	  </table>
 	  <br>
 
+
+
 	  <table>
 	    <tr>
 	      <td>
 		<heading> News </heading>
-		<ul>
-		  <li><strong>[2021.11] </strong>  &nbsp&nbsp Invited talk in the <a href="https://eab.org/events/program/261"> workshop on face image quality</a> organized by <a href="https://eab.org/">EAB</a>, <a href="https://www.dhs.gov/">DHS-OBIM</a>, <a href="https://www.nist.gov/">NIST</a>, <a href="https://www.eulisa.europa.eu/">eu-LISA</a>, etc.
+		<ul style="list-style: none;">
+		  <li class="indent"> <strong>01/2022:</strong> &nbsp&nbsp Our Paper <em>"Improving Federated Learning Face Recognition via Privacy-Agnostic Clusters"</em> was accepted by ICLR 2022. </li>
+		  <li class="indent"> <strong>11/2021:</strong> &nbsp&nbsp Invited talk in the <a href="https://eab.org/events/program/261"> workshop on face image quality</a> organized by <a href="https://eab.org/">EAB</a>, <a href="https://www.dhs.gov/">DHS-OBIM</a>, <a href="https://www.nist.gov/">NIST</a>, <a href="https://www.eulisa.europa.eu/">eu-LISA</a>, etc.
 		    <!-- 欧洲生物特征识别协会(European Association for Biometrics, EAB),  美国国土安全部生物特征身份管理办公室(DHS Office of Biometric Identity Management)， 美国国家标准与技术研究院(National Institute of Standards and Technology, NIST)， 欧盟eu-LISA机构 -->
-		  <li><strong>[2021.07] </strong>  &nbsp&nbsp Our paper <em>"Learning Compatible Embeddings"</em> was accepted by ICCV 2021.</li>
-		  <li><strong>[2021.07] </strong>  &nbsp&nbsp Publish the paper <em>"PoseFace: Pose-Invariant Features and Pose-Adaptive Loss for Face Recognition"</em>  (a work done in 2020.3) <!-- but sadly not accepted) -->.</li>
-		  <li><strong>[2021.06] </strong>  &nbsp&nbsp Invited talk about MagFace in <a href="https://app6ca5octe2206.pc.xiaoe-tech.com/detail/p_60c9c516e4b0f120ffc7b72b/6">机器之心</a>. </li>
-		  <li><strong>[2021.03] </strong>  &nbsp&nbsp Our paper <em>"MagFace: A Universal Representation for Face Recognition and Quality Assessment"</em> was accepted by CVPR 2021 as <strong>oral</strong>.</li>
-		  <li><strong>[2020.12]</strong>   &nbsp&nbsp Our paper <em>"Searching for Alignment in Face Recognition"</em> was accepted by AAAI 2021.</li>
-		  <li><strong>[2018.08] </strong>  &nbsp&nbsp Got my master degree :), but quit the PhD program :(.</li> 	
-		  <li><strong>[2015.06] </strong>  &nbsp&nbsp Got my bachelor degree. </li> 	
+		  <li class="indent"> <strong>07/2021:</strong>   &nbsp&nbsp Our paper <em>"Learning Compatible Embeddings"</em> was accepted by ICCV 2021.</li>
+		  <li class="indent"> <strong>07/2021:</strong>   &nbsp&nbsp Publish the paper <em>"PoseFace: Pose-Invariant Features and Pose-Adaptive Loss for Face Recognition"</em>  (a work done in 2020.3) <!-- but sadly not accepted) -->.</li>
+		  <li class="indent"> <strong>06/2021:</strong> &nbsp&nbsp Invited talk about MagFace in <a href="https://app6ca5octe2206.pc.xiaoe-tech.com/detail/p_60c9c516e4b0f120ffc7b72b/6">机器之心</a>. </li>
+		  <li class="indent"> <strong>03/2021:</strong>   &nbsp&nbsp Our paper <em>"MagFace: A Universal Representation for Face Recognition and Quality Assessment"</em> was accepted by CVPR 2021 as oral.</li>
+		  <li class="indent"> <strong>12/2020:</strong>   &nbsp&nbsp Our paper <em>"Searching for Alignment in Face Recognition"</em> was accepted by AAAI 2021.</li>
+		  <li class="indent"> <strong>08/2018:</strong>   &nbsp&nbsp Got my master degree :), but quit the PhD program :(.</li> 	
+		  <li class="indent"> <strong>06/2015:</strong>   &nbsp&nbsp Got my bachelor degree. </li> 	
 		</ul>
 	      </td>
 	    </tr>
@@ -87,7 +90,37 @@
 	  </table>
 	  My research interests lie in computer vision, optimization and privacy protection.
 	  Representative works are <span style="background-color: #FFFF00">highlighted</span>.
+	  <br>
+	  <br>
 
+	  <table bgcolor="#ffffd0" cellspacing="10">
+	    <td width="25%">
+	      <img class="portrait_image" src='papers/privacyface/1.png'>
+	    </td>
+	      <td valign="top" width="75%">
+		<a href="https://irvingmeng.github.io/projects/privacyface">
+		  <papertitle>Improving Federated Learning Face Recognition via Privacy-Agnostic Clusters</papertitle>
+		</a>
+		<br>
+		<strong>Qiang Meng</strong>, Feng Zhou, Hainan Ren, Tianshu Feng, Guochao Liu, Yuanqing Lin
+</h6>
+		<!-- <a href="https://www.linkedin.com/in/ganeshjcs">test</a> -->
+		<br>
+		<em>ICLR</em>, 2022  <!-- <strong><font color="#FF0000">(Oral presentation)</font> </strong> -->
+		<br>
+		<a href="https://irvingmeng.github.io/projects/privacyface">project page</a>
+		|
+		<a href="https://openreview.net/forum?id=7l1IjZVddDW">paper</a>
+		<br>
+		A priactical framework which significantly improves federated learning performance on face recognition with privacy guarantees.
+		The keys include a well-designed differentially private local clustering mechanism and a consensus-aware recognition loss.
+
+		<!-- We design a practical Differentially Private Local Clustering (DPLC) mechanism and a consensus-aware recognition loss -->
+		<!-- https://zhuanlan.zhihu.com/p/393598428 -->
+	      </td>
+	    </tr>
+	  </table>
+	  
 	  <table cellspacing="10">
 	    <tr onmouseout="lce_stop()" onmouseover="lce_start()" >
 	      <td width="25%">
@@ -116,11 +149,14 @@
 		<br>
 		<em>ICCV</em>, 2021 
 		<br>
-		<a href="https://github.com/IrvingMeng/LCE">code</a> 
-		|
 		<a href="https://irvingmeng.github.io/projects/lce">project page</a>
 		| 
+		<a href="https://arxiv.org/abs/2108.01958">paper</a>
+		| 
 		<a href="https://www.bilibili.com/video/BV1au411f7n5/">short video</a>
+		|
+		<a href="https://github.com/IrvingMeng/LCE">code</a> 
+		<iframe src="https://ghbtns.com/github-btn.html?user=IrvingMeng&repo=LCE&type=star&count=true&size=small" frameborder="0" scrolling="0" width="100" height="20" title="GitHub"></iframe>
 		<br>
 		A general framework (LCE) which is applicable for both cross model compatibility and compatible training in direct/forward/backward manners. 
 	      </td>
@@ -156,11 +192,15 @@
 		<br>
 		<em>CVPR</em>, 2021  <strong><font color="#FF0000">(Oral presentation)</font> </strong>
 		<br>
-		<a href="https://github.com/IrvingMeng/MagFace">code</a>
-		|
 		<a href="https://irvingmeng.github.io/projects/magface">project page</a>
 		|
+		<a href="https://arxiv.org/abs/2103.06627">paper</a>
+		|
 		<a href="https://www.bilibili.com/video/BV1Jq4y1j7ZH">short video</a>
+		|
+		<a href="https://github.com/IrvingMeng/MagFace">code</a>
+		<!-- <iframe src="https://ghbtns.com/github-btn.html?user=IrvingMeng&repo=MagFace&type=fork&count=true&size=small" frameborder="0" scrolling="0" width="100" height="20" title="GitHub"></iframe> -->
+		<iframe src="https://ghbtns.com/github-btn.html?user=IrvingMeng&repo=MagFace&type=star&count=true&size=small" frameborder="0" scrolling="0" width="100" height="20" title="GitHub"></iframe>
 		<br>
 		A novel loss which equips feature magnitudes with the ability to represent face qualities, as well as achieves better performances on face recognition and clustering.
 		More importantly, <em>no additional labels are required!</em>
@@ -302,7 +342,7 @@
 	    Website adapted from <u><a href="https://jonbarron.info/">Jon Barron </a></u> & <u><a href="https://github.com/abhoi/abhoi.github.io">Amlaan Bhoi</a></u>
 	  </td>
 	  <td width="30%">
-	    Last updated in Jan 12, 2022
+	    Last updated in Jan 2022
 	  </td>
 	</foot>
       </center>

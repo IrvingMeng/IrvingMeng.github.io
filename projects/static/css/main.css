@@ -198,3 +198,31 @@ body {
     margin-right: 30px;
     margin-bottom: 5px;
 }
+
+/* from https://nvlabs.github.io/instant-ngp/ */
+
+.col-6 {
+	 width: 16%;
+	 float: left;
+}
+.col-5 {
+	 width: 20%;
+	 float: left;
+}
+
+.col-4 {
+	 width: 25%;
+	 float: left;
+}
+.col-2 {
+	 width: 50%;
+	 float: left;
+}
+
+.row, .author-row, .affil-row {
+	 overflow: auto;
+}
+.author-row, .affil-row {
+	font-size: 18px;
+}
+
