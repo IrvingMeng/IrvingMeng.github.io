@@ -31,6 +31,32 @@ ul {
     padding-left: 1.2rem;
 }
 
+/* Layout */
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+/* Profile header */
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-text {
+    flex: 1;
+}
+
+.profile-image {
+    flex: 0 0 30%;
+    max-width: 30%;
+}
+
 .profile-pic {
     border-style: solid;
     border-color: #FF9900;
@@ -38,6 +64,27 @@ ul {
     max-width: 100%;
     height: auto;
     width: 100%;
+}
+
+/* Paper entries */
+.paper {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    margin-bottom: 2px;
+}
+
+.paper.highlighted {
+    background-color: #ffffd0;
+}
+
+.paper-image {
+    flex: 0 0 150px;
+    width: 150px;
+}
+
+.paper-text {
+    flex: 1;
 }
 
 .portrait_image {
@@ -139,6 +186,12 @@ foot {
 
 li.indent{margin-left:5.4em;text-indent:-5.4em}
 
+/* Footer */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
 
 
 /* li.indent{margin:0.6% 0;margin-left:5.4em;text-indent:-5.4em} */
