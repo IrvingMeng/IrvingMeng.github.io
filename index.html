@@ -118,7 +118,7 @@
             <br>
             <a href="https://arxiv.org/pdf/2605.21139">paper</a>
             <br>
-            CoPhy is a cognitive-physical RL framework for end-to-end autonomous driving that distills VLM knowledge into a BEV encoder and rolls out an auto-regressive BEV world model, optimizing the policy with dual physical and cognitive rewards. It achieves 91.4 PDMS on NAVSIM v1 and 86.1 EPDMS on NAVSIM v2.
+            CoPhy is a cognitive-physical reinforcement learning framework for end-to-end autonomous driving that distills VLM knowledge into the BEV encoder, giving scene cognition at zero inference cost. Because the distilled cognitive channel becomes a pluggable interface, <strong>trajectory generation is controllable by natural language</strong>: a user command replaces the cognitive feature at inference time and steers the policy without retraining — e.g. changing lanes on "do not tailgate", or speeding through a red light on an urgency command — while the BEV world model rollout keeps enforcing physical safety.
           </div>
         </div>
 
